@@ -1,23 +1,23 @@
 /*
- * Скетч для механизма открывания ПВХ окон
+ * Sketch for the mechanism of opening PVC windows
  * 
- * В проекте использовались следующие компоненты:
+ * The following components were used in the project:
  *    Arduino UNO                                                       https://amperka.ru/product/arduino-uno
- *    Bluetooth-модуль HC-06                                            https://amperka.ru/product/hc-06-bluetooth-module
- *    H-мост (Troyka-модуль)                                            https://amperka.ru/product/troyka-h-bridge
- *    Мотор 12 мм (15 В, 80 об/мин) с передаточным соотношением 1:298   https://amperka.ru/product/motor-dc-12mm-15v-80rpm
+ *    HC-06 Bluetooth module                                            https://amperka.ru/product/hc-06-bluetooth-module
+ *    H-bridge (Troyka-module)                                          https://amperka.ru/product/troyka-h-bridge
+ *    Motor 12 mm (15 V, 80 rpm) with a gear ratio of 1:298             https://amperka.ru/product/motor-dc-12mm-15v-80rpm
  *    
- * Переменная val предназначена для хранения значений, принимаемых по Bluetooth;
- * Переменная SPEED - хранит в себе номер пина, по которому идёт управление скоростью вращения: LOW - не вращается, HIGH - вращается на максимум;
- * Переменная DIR - хранит в себе пин, который определяет направление вращения двигателей: LOW - против часовой стрелки, HIGH - по часовой стрелки.
+ * The val variable is intended for storing values received via Bluetooth;
+ * The variable SPEED - stores the pin number by which the rotation speed is controlled: LOW - does not rotate, HIGH - rotates to the maximum;
+ * The DIR variable stores a pin that determines the direction of rotation of the motors: LOW - counterclockwise, HIGH - clockwise.
  * 
- * Если приходит "0" или значения >= 3, то двигатель не вращается
- * Если приходит "1", то двигатель вращается против часовой стрелке
- * Если приходит "2", то двигатель вращается по часовой стрелке
+ * If "0" comes or values >= 3, then the engine does not rotate;
+ * If "1" comes, then the motor rotates counterclockwise;
+ * If "2" comes, then the engine rotates clockwise
  * 
- * Питать необходимо в диапазоне от 3,3 до 5 В и током ~1,85А.
+ * It must be powered in the range from 3.3 to 5 V and with a current of ~ 1.85 A.
  * 
- * v1.0 от 11.14.2022
+ * v1.0 from 11.14.2022 by Greengaraj
 */
 
 int val, SPEED = 11, DIR = A3;
